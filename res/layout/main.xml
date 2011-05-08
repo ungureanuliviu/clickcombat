@@ -3,14 +3,154 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background = "#f1f1f1"
-    >
+    android:background = "#f1f1f1">
 	<RelativeLayout
 		android:id = "@+id/layout_top"
 		android:layout_width = "fill_parent"
-		android:layout_height = "40dp"
+		android:layout_height = "50dp"
 		android:background = "#222222"
-		android:layout_alignParentTop = "true">
-		
+		android:layout_alignParentTop = "true">		
+		<ImageButton
+			android:id = "@+id/lt_but_home"
+			android:layout_width = "30dp"
+			android:layout_height = "fill_parent"
+			android:src = "@drawable/icon_top_home"
+			android:background = "#00000000"			
+			android:layout_alignParentLeft = "true"
+			android:layout_alignParentTop = "true"/>
+		<View
+			android:id = "@+id/lt_line_1"
+			android:layout_width = "1dp"
+			android:layout_height = "20dp"
+			android:layout_centerVertical = "true"
+			android:layout_toRightOf = "@id/lt_but_home"
+			android:background = "#909090"/>			
+		<TextView
+			android:id = "@+id/lt_title"
+			android:layout_width = "fill_parent"
+			android:layout_height = "wrap_content"
+			android:text = "clickCombat"
+			android:textColor = "#909090"
+			android:textSize = "17sp"
+			android:textStyle = "bold"
+			android:layout_toRightOf = "@id/lt_line_1"
+			android:layout_toLeftOf = "@+id/lt_line_2"
+			android:layout_marginLeft = "5dp"
+			android:layout_centerVertical = "true"/>
+		<ImageButton
+			android:id = "@+id/lt_but_info"
+			android:layout_width = "30dp"
+			android:layout_height = "fill_parent"
+			android:src = "@drawable/icon_top_info"
+			android:background = "#00000000"		
+			android:layout_alignParentRight = "true"
+			android:layout_alignParentTop = "true"/>
+		<View
+			android:id = "@+id/lt_line_2"
+			android:layout_width = "1dp"
+			android:layout_height = "20dp"
+			android:layout_centerVertical = "true"
+			android:layout_toLeftOf = "@id/lt_but_info"
+			android:background = "#909090"/>							
+	</RelativeLayout>
+	<RelativeLayout
+		android:id = "@+id/layout_actions"
+		android:layout_width = "fill_parent"
+		android:layout_height = "50dp"
+		android:layout_below = "@id/layout_top"
+		android:background = "@drawable/action_holder_background">
+		<RelativeLayout
+			android:id = "@+id/but_action_add_link"
+			android:layout_width = "fill_parent"
+			android:layout_height = "fill_parent"		
+			android:layout_alignParentLeft = "true"			
+			android:layout_toLeftOf = "@+id/but_action_my_account"
+			android:background = "@drawable/button_action_background"
+			android:clickable = "true">		
+			<ImageView
+				android:id = "@+id/but_action_image_add_link"
+				android:layout_width = "wrap_content"
+				android:layout_height = "wrap_content"
+				android:src	= "@drawable/icon_action_plus"	
+				android:layout_centerVertical = "true"			
+				android:layout_toLeftOf = "@+id/but_action_add_link"
+				android:clickable = "false"/>		
+			<Button
+				android:id = "@id/but_action_add_link"
+				android:layout_width = "wrap_content"
+				android:layout_height = "fill_parent"				
+				android:layout_centerHorizontal = "true"
+				android:text = "Add link"
+				android:textColor = "#222222"
+				android:textSize = "12sp"
+				android:textStyle = "bold"				
+				android:paddingLeft = "2dp"
+				android:paddingRight = "10dp"
+				android:clickable = "false"			
+				android:background = "#00000000"/>				
+		</RelativeLayout>
+		<Button
+			android:id = "@id/but_action_my_account"
+			android:layout_width = "100dp"
+			android:layout_height = "fill_parent"
+			android:text = "My account"
+			android:textColor = "#222222"
+			android:textSize = "12sp"
+			android:textStyle = "bold"
+			android:layout_centerHorizontal = "true"
+			android:background = "@drawable/button_action_background"
+			android:paddingLeft = "10dp"
+			android:paddingRight = "10dp"
+			android:gravity = "left|center_vertical"
+			android:drawableLeft = "@drawable/icon_action_plus"
+			android:drawablePadding = "2dp"/>	
+		<RelativeLayout
+			android:id = "@+id/but_action_logout"
+			android:layout_width = "fill_parent"
+			android:layout_height = "fill_parent"		
+			android:layout_alignParentRight = "true"			
+			android:layout_toRightOf = "@id/but_action_my_account"
+			android:background = "@drawable/button_action_background"
+			android:clickable = "true">		
+			<ImageView
+				android:id = "@+id/but_action_image_logout"
+				android:layout_width = "wrap_content"
+				android:layout_height = "wrap_content"
+				android:src	= "@drawable/icon_action_plus"	
+				android:layout_centerVertical = "true"			
+				android:layout_toLeftOf = "@+id/but_action_logout"
+				android:clickable = "false"/>		
+			<Button
+				android:id = "@id/but_action_logout"
+				android:layout_width = "wrap_content"
+				android:layout_height = "fill_parent"				
+				android:layout_centerHorizontal = "true"
+				android:text = "Logout"
+				android:textColor = "#222222"
+				android:textSize = "12sp"
+				android:textStyle = "bold"				
+				android:paddingLeft = "2dp"
+				android:paddingRight = "10dp"
+				android:gravity = "right|center_vertical"	
+				android:clickable = "false"			
+				android:background = "#00000000"/>				
+		</RelativeLayout>
+	</RelativeLayout>
+	<RelativeLayout
+		android:id = "@+id/layout_content"
+		android:layout_width  = "fill_parent"
+		android:layout_height = "wrap_content"
+		android:layout_below = "@id/layout_actions">
+		 <ProgressBar android:id="@+id/loading_progress"
+	        style="?android:attr/progressBarStyleSmall"
+	        android:indeterminateOnly = "true"
+	        android:layout_width="15dp"
+	        android:layout_height="15dp"        
+	       	android:layout_centerHorizontal = "true"
+			android:layout_centerVertical = "true"			
+			android:layout_marginTop = "6dp"
+			android:layout_marginRight = "2dp"			
+			android:visibility= "visible"
+			android:indeterminateDrawable = "@drawable/progress_small"/>	
 	</RelativeLayout>
 </RelativeLayout>

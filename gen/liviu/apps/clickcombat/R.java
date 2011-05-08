@@ -11,10 +11,31 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int icon=0x7f020000;
+        public static final int action_holder_background=0x7f020000;
+        public static final int button_action_background=0x7f020001;
+        public static final int button_action_background_selected=0x7f020002;
+        public static final int button_action_background_unselected=0x7f020003;
+        public static final int icon=0x7f020004;
+        public static final int icon_action_plus=0x7f020005;
+        public static final int icon_top_home=0x7f020006;
+        public static final int icon_top_info=0x7f020007;
+        public static final int progres_bar_background=0x7f020008;
     }
     public static final class id {
+        public static final int but_action_add_link=0x7f050007;
+        public static final int but_action_image_add_link=0x7f050009;
+        public static final int but_action_image_logout=0x7f05000b;
+        public static final int but_action_logout=0x7f05000a;
+        public static final int but_action_my_account=0x7f050008;
+        public static final int layout_actions=0x7f050006;
+        public static final int layout_content=0x7f05000c;
         public static final int layout_top=0x7f050000;
+        public static final int lt_but_home=0x7f050001;
+        public static final int lt_but_info=0x7f050005;
+        public static final int lt_line_1=0x7f050002;
+        public static final int lt_line_2=0x7f050004;
+        public static final int lt_title=0x7f050003;
+        public static final int progressBar=0x7f05000d;
     }
     public static final class layout {
         public static final int main=0x7f030000;
