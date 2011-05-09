@@ -20,6 +20,7 @@ public final class R {
         public static final int icon_top_home=0x7f020006;
         public static final int icon_top_info=0x7f020007;
         public static final int progres_bar_background=0x7f020008;
+        public static final int progress_small=0x7f020009;
     }
     public static final class id {
         public static final int but_action_add_link=0x7f050007;
@@ -30,12 +31,12 @@ public final class R {
         public static final int layout_actions=0x7f050006;
         public static final int layout_content=0x7f05000c;
         public static final int layout_top=0x7f050000;
+        public static final int loading_progress=0x7f05000d;
         public static final int lt_but_home=0x7f050001;
         public static final int lt_but_info=0x7f050005;
         public static final int lt_line_1=0x7f050002;
         public static final int lt_line_2=0x7f050004;
         public static final int lt_title=0x7f050003;
-        public static final int progressBar=0x7f05000d;
     }
     public static final class layout {
         public static final int main=0x7f030000;
