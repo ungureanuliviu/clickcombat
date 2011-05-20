@@ -44,14 +44,7 @@
 			android:src = "@drawable/icon_top_info"
 			android:background = "#00000000"		
 			android:layout_alignParentRight = "true"
-			android:layout_alignParentTop = "true"/>
-		<View
-			android:id = "@+id/lt_line_2"
-			android:layout_width = "1dp"
-			android:layout_height = "20dp"
-			android:layout_centerVertical = "true"
-			android:layout_toLeftOf = "@id/lt_but_info"
-			android:background = "#909090"/>							
+			android:layout_alignParentTop = "true"/>								
 	</RelativeLayout>
 	<RelativeLayout
 		android:id = "@+id/layout_actions"
@@ -134,33 +127,101 @@
 				android:gravity = "right|center_vertical"	
 				android:clickable = "false"			
 				android:background = "#00000000"/>				
-		</RelativeLayout>
-	</RelativeLayout>
+		</RelativeLayout>		
+	</RelativeLayout>	
 	<RelativeLayout
 		android:id = "@+id/layout_content"
 		android:layout_width  = "fill_parent"
 		android:layout_height = "fill_parent"
 		android:layout_below = "@id/layout_actions"
-		android:background = "#00000000">
-		 <ProgressBar android:id="@+id/loading_progress"
-	        style="?android:attr/progressBarStyleSmall"
-	        android:indeterminateOnly = "true"
-	        android:layout_width="15dp"
-	        android:layout_height="15dp"        
-	       	android:layout_centerInParent = "true"	
-			android:layout_marginTop = "6dp"
-			android:layout_marginRight = "2dp"			
-			android:visibility= "visible"
-			android:indeterminateDrawable = "@drawable/progress_small"/>	
-		<ListView
-			android:id = "@+id/main_domains_list"
+		android:background = "#dfdfdf">
+		<ViewFlipper
+			android:id = "@+id/lt_view_flipper"
 			android:layout_width = "fill_parent"
 			android:layout_height = "fill_parent"
-			android:layout_alignParentTop = "true"
-			android:cacheColorHint = "#00000000"
-			android:listSelector = "#00000000"
-			android:divider = "#00000000"
-			android:dividerHeight = "0dp"
-			android:visibility = "gone"/>
+			android:clickable = "true">
+			<RelativeLayout
+				android:id = "@+id/lt_view1"
+				android:layout_width = "fill_parent"
+				android:layout_height = "fill_parent">
+				<RelativeLayout
+					android:id = "@+id/view_title"
+					android:layout_width = "fill_parent"
+					android:layout_height = "19dp"	
+					android:layout_alignParentTop = "true"			
+					android:background = "#222222">
+					<TextView
+						android:id = "@+id/lt_current_screen"
+						android:layout_width = "wrap_content"
+						android:layout_height ="wrap_content"
+						android:text = "All time"
+						android:textSize = "12sp"
+						android:layout_marginLeft = "5dp"	
+						android:layout_centerVertical = "true"		
+						android:textColor = "#ffffff"/>	
+				</RelativeLayout>					
+				 <ProgressBar android:id="@+id/loading_progress"
+			        style="?android:attr/progressBarStyleSmall"
+			        android:indeterminateOnly = "true"
+			        android:layout_width="15dp"
+			        android:layout_height="15dp"        
+			       	android:layout_centerInParent = "true"	
+					android:layout_marginTop = "6dp"
+					android:layout_marginRight = "2dp"			
+					android:visibility= "visible"
+					android:indeterminateDrawable = "@drawable/progress_small"/>	
+				<ListView
+					android:id = "@+id/main_domains_list"
+					android:layout_width = "fill_parent"
+					android:layout_height = "fill_parent"
+					android:layout_below = "@id/view_title"
+					android:cacheColorHint = "#00000000"
+					android:listSelector = "#00000000"
+					android:divider = "#00000000"
+					android:dividerHeight = "0dp"
+					android:visibility = "gone"/>
+			</RelativeLayout>
+			<RelativeLayout
+				android:id = "@+id/lt_view_latest_domains"
+				android:layout_width = "fill_parent"
+				android:layout_height = "fill_parent">
+				<RelativeLayout
+					android:id = "@+id/view_title2"
+					android:layout_width = "fill_parent"
+					android:layout_height = "19dp"	
+					android:layout_alignParentTop = "true"			
+					android:background = "#222222">
+					<TextView
+						android:id = "@+id/lt_current_screen2"
+						android:layout_width = "wrap_content"
+						android:layout_height ="wrap_content"
+						android:text = "Latest 20 domains"
+						android:textSize = "12sp"
+						android:layout_marginLeft = "5dp"	
+						android:layout_centerVertical = "true"		
+						android:textColor = "#ffffff"/>	
+				</RelativeLayout>					
+				 <ProgressBar android:id="@+id/loading_progress_latest_domains"
+			        style="?android:attr/progressBarStyleSmall"
+			        android:indeterminateOnly = "true"
+			        android:layout_width="15dp"
+			        android:layout_height="15dp"        
+			       	android:layout_centerInParent = "true"	
+					android:layout_marginTop = "6dp"
+					android:layout_marginRight = "2dp"			
+					android:visibility= "visible"
+					android:indeterminateDrawable = "@drawable/progress_small"/>	
+				<ListView
+					android:id = "@+id/main_domains_list_latest_domains"
+					android:layout_width = "fill_parent"
+					android:layout_height = "fill_parent"
+					android:layout_below = "@id/view_title2"
+					android:cacheColorHint = "#00000000"
+					android:listSelector = "#00000000"
+					android:divider = "#00000000"
+					android:dividerHeight = "0dp"
+					android:visibility = "gone"/>
+			</RelativeLayout>											
+		</ViewFlipper>
 	</RelativeLayout>
 </RelativeLayout>

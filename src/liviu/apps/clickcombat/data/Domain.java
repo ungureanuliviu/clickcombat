@@ -1,66 +1,77 @@
 package liviu.apps.clickcombat.data;
 
-public class Domain {
+import android.os.Bundle;
+import liviu.apps.clickcombat.interfaces.BundleAnnotation;
+
+public class Domain{
 	
 	// constants
-	private final String TAG		= "Domain";
-	
-	/*
-	 *         "dm_id": "1",
-        "dm_name": "http:\/\/www.kinno.me",
-        "dm_user_id": "1",
-        "dm_description": "my first website",
-        "dm_file_check": "552a649a3917d306763b7866680ae1a1.html",
-        "dm_added_date": "1304796938",
-        "dm_clicks": "18",
-        "dm_is_verified": "1",
-        "px": 18
-	 */
+	private final String TAG		= "Domain";	
 	
 	// data
+	@BundleAnnotation(bundleKey = "NAME")	
 	private String	name;
-	private double  px;
+	
+	@BundleAnnotation(bundleKey = "PX")
+	private float  px;
+	
+	@BundleAnnotation(bundleKey = "ID")
 	private int		id;
+	
+	@BundleAnnotation (bundleKey = "USER_ID")
 	private int 	user_id;
+	
+	@BundleAnnotation (bundleKey = "DESCRIPION")
 	private String  description;
+	
+	@BundleAnnotation (bundleKey = "FILE")
 	private String  file;
+	
+	@BundleAnnotation (bundleKey = "ADDED_DATE")
 	private long	addedDate;
+	
+	@BundleAnnotation (bundleKey = "CLICKS")
 	private int		clicks;
+	
+	@BundleAnnotation (bundleKey = "IS_VERIFIED")
 	private boolean is_verified;	
+	
+	private BundleConvertor bundleConvertor;
 	
 	
 	public Domain() {
-		name 		= "no name";
-		px 			= 0;
-		id			= -1;
-		user_id		= -1;
-		description = " ";
-		file		= "";
-		addedDate	= 0;
-		clicks		= 0;
-		is_verified	= false;
+		name 			= "no name";
+		px 				= 0;
+		id				= -1;
+		user_id			= -1;
+		description 	= " ";
+		file			= "";
+		addedDate		= 0;
+		clicks			= 0;
+		is_verified		= false;
+		bundleConvertor = new BundleConvertor();
 	}
 	
 	public Domain(int id_,
 				  int user_id_,
 			      String name_,
-				  double px_,
+				  float px_,
 				  String desc_,
 				  String file_,
 				  long addedDate_,
 				  int clicks_,
 				  boolean is_verified_){
 		
-		name 		= name_;
-		px 			= px_;
-		id			= id_;
-		user_id		= user_id_;
-		description = desc_;
-		file		= file_;
-		addedDate	= addedDate_;
-		clicks		= clicks_;
-		is_verified	= is_verified_;
-		
+		name 			= name_;
+		px 				= px_;
+		id				= id_;
+		user_id			= user_id_;
+		description 	= desc_;
+		file			= file_;
+		addedDate		= addedDate_;
+		clicks			= clicks_;
+		is_verified		= is_verified_;
+		bundleConvertor = new BundleConvertor();
 	}
 	
 	public long getAddedDate() {
@@ -87,7 +98,7 @@ public class Domain {
 		return name;
 	}
 	
-	public double getPx() {
+	public float getPx() {
 		return px;
 	}
 	
@@ -123,7 +134,7 @@ public class Domain {
 		this.name = name;
 	}
 	
-	public void setPx(double px) {
+	public void setPx(float px) {
 		this.px = px;
 	}
 	
@@ -131,4 +142,7 @@ public class Domain {
 		this.user_id = user_id;
 	}
 	
+	public Bundle toBundle(){
+		return bundleConvertor.toBundle(this);
+	}
 }

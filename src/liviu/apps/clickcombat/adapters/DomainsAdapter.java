@@ -60,6 +60,7 @@ public class DomainsAdapter extends BaseAdapter{
 			vh = (ViewHolder)convertView.getTag();
 		
 		vh.name.setText(items.get(position).getName());
+		vh.name.setTextSize(items.get(position).getPx());
 		vh.desc.setText(items.get(position).getDescription());
 		
 		return convertView;

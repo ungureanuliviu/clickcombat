@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding = "5dp"
+    android:id = "@+id/list_view_footer"
+    android:visibility= "gone"
+    android:background = "@drawable/main_list_item_background">
+	 <ProgressBar 
+        style="?android:attr/progressBarStyleSmall"
+        android:indeterminateOnly = "true"
+        android:layout_width="15dp"
+        android:layout_height="15dp"        
+       	android:layout_centerInParent = "true"	
+		android:layout_marginTop = "6dp"				
+		android:indeterminateDrawable = "@drawable/progress_small"/> 		
+</RelativeLayout>
